@@ -3,8 +3,23 @@ package Recurso;
 import Framework.RecursoProdutoAbstrato;
 
 
-public class RecursoProjetor extends RecursoProdutoAbstrato {
+public class RecursoProjetor extends RecursoProdutoConcreto {
 	
-	String marca;
+	private String marca;
+
+    public RecursoProjetor(int tipoRecurso, String nomeRecurso, String descricaoRecurso, String numeroPatrimonio, String marca) {
+        super(tipoRecurso, nomeRecurso, descricaoRecurso, numeroPatrimonio);
+        this.marca = marca;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    
+    
 
 }
