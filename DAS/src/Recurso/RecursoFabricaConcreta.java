@@ -11,7 +11,7 @@ public class RecursoFabricaConcreta extends RecursoFabricaAbstrata {
     public  RecursoProdutoAbstrato factoryMethod(int tipoRecurso) {
        switch (tipoRecurso){
            case 1:
-               return new RecursoProjetor(tipoRecurso, null, null, null, null); 
+               return new RecursoProjetor(tipoRecurso, "teste", null, null, null); 
            
            case 2:    
                return new RecursoSala(tipoRecurso, null, null, null,null, tipoRecurso, null);
