@@ -41,9 +41,9 @@ public class RecursoSala extends RecursoProdutoAbstrato{
 
     @Override
     public String toString() {
-        return "Recurso: Sala" + 
-                "\n nome do Recurso: "+nomeRecurso+
-                "\n descricao do Recurso: "+descricaoRecurso+
+        return "Tipo de Recurso: Sala" + 
+                "\n nome da Sala: "+nomeRecurso+
+                "\n descricao da Sala: "+descricaoRecurso+
                 "\n numero do Patrimonio: "+numeroPatrimonio+
                 "\n numero da Sala: " + numeroSala + 
                 "\n andar da Sala: " + andarSala + 
