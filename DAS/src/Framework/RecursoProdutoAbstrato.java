@@ -46,7 +46,7 @@ public abstract class RecursoProdutoAbstrato {
         this.numeroPatrimonio = numeroPatrimonio;
     }
 
-   public String toString() {
+   public String Imprimir() {
             return "Recurso:" + 
                 "\n nome do Recurso = " + nomeRecurso + 
                 "\n descricao do Recurso = " + descricaoRecurso + 

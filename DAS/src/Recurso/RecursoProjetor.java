@@ -22,12 +22,13 @@ public class RecursoProjetor extends RecursoProdutoConcreto {
 
     
         
-        public String toString(String nomeRecurso, String descricaoRecurso, String numeroPatrimonio) {
-            return "Recurso do Projetor:" + 
-                "\n marca: " + marca+
-                "\n nomeRecurso = " + nomeRecurso + 
-                "\n descricaoRecurso = " + descricaoRecurso + 
-                "\n numeroPatrimonio = " + numeroPatrimonio ;
+        public String toString() {
+            return "Recurso: Projetor" + 
+                "\n nome do Recurso: "+nomeRecurso+
+                "\n descricao do Recurso: "+descricaoRecurso+
+                "\n numero do Patrimonio: "+numeroPatrimonio+
+                "\n marca: " + marca;
+                    
            }          
                
                 
