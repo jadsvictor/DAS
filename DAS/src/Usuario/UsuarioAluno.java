@@ -4,25 +4,36 @@ import Framework.UsuarioProdutoAbstrato;
 
 public class UsuarioAluno extends UsuarioProdutoAbstrato {
 		
-    int semestreCursando;
+    String semestreEntrada;
+    String curso;
 
-    public UsuarioAluno(int semestreCursando, int tipoUsuario, String nome, String matricula) {
+    public UsuarioAluno(String semestreEntrada, String curso, int tipoUsuario, String nome, String matricula) {
         super(tipoUsuario, nome, matricula);
-        this.semestreCursando = semestreCursando;
+        this.semestreEntrada = semestreEntrada;
+        this.curso = curso;
     }
 
-    public int getSemestreCursando() {
-        return semestreCursando;
+    public String getSemestreEntrada() {
+        return semestreEntrada;
     }
 
-    public void setSemestreCursando(int semestreCursando) {
-        this.semestreCursando = semestreCursando;
+    public void setSemestreEntrada(String semestreEntrada) {
+        this.semestreEntrada = semestreEntrada;
     }
-   
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+        
     public String toString() {
             return "Tipo de Usuario:Aluno" + 
                 "\n Nome do Aluno = " + nome + 
                 "\n Matricula do Aluno = " + matricula +
-                "\n Semestre Cursando = " +  semestreCursando;
+                "\n Curso do Aluno = " + curso +
+                "\n Semestre de Entrada = " +  semestreEntrada;
            }  
 }
