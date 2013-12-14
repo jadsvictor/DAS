@@ -14,23 +14,25 @@ public abstract class RecursoFabricaAbstrata {
     	         
 	        // Create the factory object
 	        RecursoFabricaConcreta fabrica = new RecursoFabricaConcreta();
-	         
+	        
 	        // criando produto abstrato         
 	        RecursoProdutoAbstrato produto = null;        
                 
-                produto=fabrica.factoryMethod(tipoRecurso);
+                produto = fabrica.factoryMethod(tipoRecurso);
          
            
             RecursosCadastrados.add(produto);  
             
     }
 
-    public ArrayList<RecursoProdutoAbstrato> getRecursosCadastrados() {
-        return RecursosCadastrados;
-    }
+    
 
     public void setRecursosCadastrados(ArrayList<RecursoProdutoAbstrato> RecursosCadastrados) {
         this.RecursosCadastrados = RecursosCadastrados;
+    }
+    
+    public ArrayList<RecursoProdutoAbstrato> getRecursosCadastrados() {
+        return RecursosCadastrados;
     }
     
 }

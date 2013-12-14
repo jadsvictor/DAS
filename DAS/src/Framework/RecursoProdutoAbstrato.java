@@ -2,10 +2,10 @@ package Framework;
 
 public abstract class RecursoProdutoAbstrato {
 	
-        int tipoRecurso;
-	String nomeRecurso;
-	String descricaoRecurso;
-	String numeroPatrimonio;
+        private int tipoRecurso;
+	public String nomeRecurso;
+	public String descricaoRecurso;
+	public String numeroPatrimonio;
 
     public RecursoProdutoAbstrato(int tipoRecurso, String nomeRecurso, String descricaoRecurso, String numeroPatrimonio) {
         this.tipoRecurso = tipoRecurso;
@@ -46,13 +46,14 @@ public abstract class RecursoProdutoAbstrato {
         this.numeroPatrimonio = numeroPatrimonio;
     }
 
-    @Override
-    public String toString() {
-        return "\n nome do Recurso: "+ nomeRecurso+
-                "\n descricao do Recurso: "+ descricaoRecurso+
-                "\n Numero do Patrimonio: " +numeroPatrimonio;
-    }           
-        
+   public String toString() {
+            return "Recurso:" + 
+                "\n nome do Recurso = " + nomeRecurso + 
+                "\n descricao do Recurso = " + descricaoRecurso + 
+                "\n numero do Patrimonio = " + numeroPatrimonio ;
+           }  
+
+     
         
 
 }
