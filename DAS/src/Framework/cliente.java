@@ -44,6 +44,11 @@ do{
        
          
        fabricaconcreta.criarProduto(tipoRecurso);
+       
+       //exibir recurso cadastrado
+       fabricaconcreta.getRecursosCadastrados();
+       JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
+        
  }while(tipoRecurso != 3);
 
       fabricaconcreta.getRecursosCadastrados();
