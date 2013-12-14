@@ -38,6 +38,17 @@ public class RecursoSala extends RecursoProdutoAbstrato{
     public void setNomePredio(String nomePredio) {
         this.nomePredio = nomePredio;
     }
+
+    @Override
+    public String toString() {
+        return "Recurso: Sala" + 
+                "\n nome do Recurso: "+nomeRecurso+
+                "\n descricao do Recurso: "+descricaoRecurso+
+                "\n numero do Patrimonio: "+numeroPatrimonio+
+                "\n numero da Sala: " + numeroSala + 
+                "\n andar da Sala: " + andarSala + 
+                "\n nomePredio: " + nomePredio ;
+    }
         
         
 }
