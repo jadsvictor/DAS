@@ -16,7 +16,9 @@ public abstract class RecursoFabricaAbstrata {
 	        RecursoFabricaConcreta fabrica = new RecursoFabricaConcreta();
 	         
 	        // criando produto abstrato         
-	        RecursoProdutoAbstrato produto = fabrica.factoryMethod(tipoRecurso);
+	        RecursoProdutoAbstrato produto = null;        
+                
+                fabrica.factoryMethod(tipoRecurso);
          
            
             RecursosCadastrados.add(produto);  
