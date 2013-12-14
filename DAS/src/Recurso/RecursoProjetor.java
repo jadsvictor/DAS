@@ -19,6 +19,13 @@ public class RecursoProjetor extends RecursoProdutoConcreto {
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    
+    public String toString() {
+        return "Recurso do Projetor:" + 
+                "\n marca: " + marca;
+                
+    }
     
     
 

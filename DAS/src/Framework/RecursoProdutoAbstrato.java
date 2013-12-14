@@ -45,6 +45,13 @@ public abstract class RecursoProdutoAbstrato {
     public void setNumeroPatrimonio(String numeroPatrimonio) {
         this.numeroPatrimonio = numeroPatrimonio;
     }
+
+    @Override
+    public String toString() {
+        return "\n nome do Recurso: "+ nomeRecurso+
+                "\n descricao do Recurso: "+ descricaoRecurso+
+                "\n Numero do Patrimonio: " +numeroPatrimonio;
+    }           
         
         
 

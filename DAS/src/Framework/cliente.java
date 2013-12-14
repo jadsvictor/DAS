@@ -12,7 +12,7 @@ public class cliente {
 int tipoRecurso;
 RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
 
-for(int i=0; i<2; i++){
+//for(int i=0; i<2; i++){
 	   tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
                                                                + "1-Projetor"
                                                                + "2 - sala"));
@@ -20,7 +20,7 @@ for(int i=0; i<2; i++){
        
            
        fabricaconcreta.criarProduto(tipoRecurso);
-       }
+//       }
 
       fabricaconcreta.getRecursosCadastrados();
        for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
