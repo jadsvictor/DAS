@@ -2,6 +2,7 @@ package Framework;
 
 import Framework.RecursoFabricaAbstrata;
 import Recurso.RecursoFabricaConcreta;
+import Usuario.UsuarioFabricaConcreta;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -9,10 +10,10 @@ import javax.swing.JOptionPane;
 public class cliente {
 	 
 	   public static void main(String[] args){
-int tipoRecurso;
+
 int escolha;
 
-RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+
 
 // escolha entre usuario e recurso
 do{
@@ -23,7 +24,7 @@ do{
          
          switch(escolha){
         case 1:
-            
+            cadastroSolicitante();
             break;
         case 2:
             CadastroRecurso();
@@ -33,7 +34,7 @@ do{
            }
 }while(escolha != 3);
 
-    
+/*    
 //for(int i=0; i<2; i++){
 do{
         tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
@@ -49,10 +50,33 @@ do{
        fabricaconcreta.getRecursosCadastrados();
        JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
         
- }while(tipoRecurso != 3);
+ }while(tipoRecurso != 3);*/
 
-      fabricaconcreta.getRecursosCadastrados();
-       for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
+        
+           }
+           
+       public static void CadastroRecurso(){
+        int tipoRecurso;
+        RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+        
+        do{
+                tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
+                                                                           + "\n1-Projetor"
+                                                                           + "\n2 - sala"
+                                                                            +"\n3 - sair"));
+           
+       
+         
+                fabricaconcreta.criarProduto(tipoRecurso);
+       
+                 //exibir recurso cadastrado
+                 //fabricaconcreta.getRecursosCadastrados();
+                JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
+        
+            }while(tipoRecurso != 3);
+        /*
+        fabricaconcreta.getRecursosCadastrados();
+        for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
            // System.out.println(fabricaconcreta.getRecursosCadastrados().get(i).nomeRecurso); 
             //System.out.println(fabricaconcreta.getRecursosCadastrados().get(i).descricaoRecurso);
             //System.out.println(fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio);
@@ -61,10 +85,24 @@ do{
             
             
   
-        }  
-           }
-           
-       public static void CadastroRecurso(){
-           
+        }*/
        }    
+       
+       public static void cadastroSolicitante(){
+           int tipoUsuario;
+           UsuarioFabricaConcreta UFabricaConcreta = new UsuarioFabricaConcreta();
+           
+           do{
+               tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
+                                                                           "\n 1 - Professor."+
+                                                                           "\n 2 - Aluno."
+                                                                          +"\n 3- Sair"));
+               
+               UFabricaConcreta.criarUsuario(tipoUsuario);
+               
+               //exibir solicitante cadastrado
+               JOptionPane.showMessageDialog(null, UFabricaConcreta.getUsuariosCadastrados().toString());
+               
+           }while(tipoUsuario != 3);
+       }
 }

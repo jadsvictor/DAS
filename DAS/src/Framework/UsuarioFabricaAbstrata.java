@@ -23,5 +23,13 @@ public abstract class UsuarioFabricaAbstrata {
             UsuariosCadastrados.add(produto);  
             
     }
+     
+     public void setUsuariosCadastrados( ArrayList<UsuarioProdutoAbstrato> UsuariosCadastrados ){
+         this.UsuariosCadastrados = UsuariosCadastrados;
+     }
+     
+     public ArrayList<UsuarioProdutoAbstrato> getUsuariosCadastrados(){
+         return UsuariosCadastrados;
+     }
     
 }
