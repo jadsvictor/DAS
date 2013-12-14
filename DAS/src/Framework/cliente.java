@@ -21,8 +21,8 @@ int tipoRecurso;
        
       fabricaconcreta.getRecursosCadastrados();
        for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
-            System.out.println(fabricaconcreta.getRecursosCadastrados().get(i));  
-  
+            System.out.println(fabricaconcreta.getRecursosCadastrados().get(i));
+
         }  
            }
 }
