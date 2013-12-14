@@ -10,8 +10,30 @@ public class cliente {
 	 
 	   public static void main(String[] args){
 int tipoRecurso;
+int escolha;
+
 RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
 
+// escolha entre usuario e recurso
+do{
+         escolha = Integer.parseInt(JOptionPane.showInputDialog("Cadastro:" +
+                                                                    "\n 1 - Solicitante"+
+                                                                    "\n 2 - Recurso"+
+                                                                    "\n 3 - Sair"));
+         
+         switch(escolha){
+        case 1:
+            
+            break;
+        case 2:
+            CadastroRecurso();
+            break;
+        default:
+            break;
+           }
+}while(escolha != 3);
+
+    
 //for(int i=0; i<2; i++){
 do{
         tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
@@ -36,4 +58,8 @@ do{
   
         }  
            }
+           
+       public static void CadastroRecurso(){
+           
+       }    
 }
