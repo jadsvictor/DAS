@@ -110,6 +110,14 @@ public void alocar (){
         this.alocarData = alocarData;
     }
 
+    @Override
+    public String toString() {
+        return "Alocacao:" + 
+                "\nRecurso=" + recurso + 
+                "\nUsuario=" + usuario + 
+                "\nAlocarData=" + alocarData ;
+    }
+
     
 }
 
