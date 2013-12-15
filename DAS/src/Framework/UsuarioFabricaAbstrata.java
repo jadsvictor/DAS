@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
 
 public abstract class UsuarioFabricaAbstrata {
   
- ArrayList<UsuarioProdutoConcreto> usuarioscadastrados = new ArrayList<UsuarioProdutoConcreto> ();
+ static ArrayList<UsuarioProdutoConcreto> usuarioscadastrados = new ArrayList<UsuarioProdutoConcreto> ();
  
      public abstract UsuarioProdutoAbstrato factoryMethod (int tipoRecurso);
     
-      public void criarUsuario(int tipoUsuario){
+     public void criarUsuario(int tipoUsuario){
     	         
 	        // Create the factory object
 	        UsuarioFabricaConcreta fabrica = new UsuarioFabricaConcreta();
@@ -24,15 +24,19 @@ public abstract class UsuarioFabricaAbstrata {
             
     }
 
-        public ArrayList<UsuarioProdutoConcreto> getUsuariosCadastrados() {
-        return usuarioscadastrados;
-    }
-
-    public void setUsuariosCadastrados(ArrayList<UsuarioProdutoConcreto> UsuariosCadastrados) {
-        this.usuarioscadastrados = UsuariosCadastrados;
-    }
-    
-      public void alteraUsuario (String MatriculaAlterar){
+     public void buscarUsuario (String MatriculaBuscar){
+      
+               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();               
+               int i;
+                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
+                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
+                   JOptionPane.showMessageDialog(null,fabricaconcreta.getUsuariosCadastrados().get(i).toString());
+               } 
+                 }
+         
+     }
+       
+     public void alteraUsuario (String MatriculaAlterar){
                
                int tipoUsuarioAlterar=0;
                boolean encontrou=false;
@@ -50,12 +54,13 @@ public abstract class UsuarioFabricaAbstrata {
                     fabricaconcreta.criarUsuario(tipoUsuarioAlterar);
                     }  
 }
-    public ArrayList<UsuarioProdutoConcreto> getUsuarioscadastrados() {
+      
+     public ArrayList<UsuarioProdutoConcreto> getUsuariosCadastrados() {
         return usuarioscadastrados;
     }
-
-    public void setUsuarioscadastrados(ArrayList<UsuarioProdutoConcreto> usuarioscadastrados) {
-        this.usuarioscadastrados = usuarioscadastrados;
+     
+     public void setUsuariosCadastrados(ArrayList<UsuarioProdutoConcreto> UsuariosCadastrados) {
+        this.usuarioscadastrados = UsuariosCadastrados;
     }
 
 }

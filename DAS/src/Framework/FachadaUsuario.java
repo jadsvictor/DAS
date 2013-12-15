@@ -9,9 +9,12 @@ public class FachadaUsuario {
         fabricaconcreta.criarUsuario(tipoRecurso);
     }
     
-     public void alterarProdutoFachada (String Matricula){
-        fabricaconcreta.alteraUsuario(Matricula);
-    
+     public void alterarProdutoFachada (String MatriculaAlterar){
+        fabricaconcreta.alteraUsuario(MatriculaAlterar);
     }
     
+     public void buscarProdutoFachada (String MatriculaAlterar){
+         fabricaconcreta.buscarUsuario(MatriculaAlterar);
+     }
+     
 }

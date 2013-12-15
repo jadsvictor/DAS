@@ -43,6 +43,18 @@ public abstract class RecursoFabricaAbstrata {
                     fabricaconcreta.criarProduto(tipoRecursoAlterar);
                     }
 } 
+      
+      public void buscarRecurso(String NumeroPatrimonioBuscar){
+      
+              RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+              int i=0;                
+                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
+                      if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
+                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
+                       }
+                 }
+    }
+      
     public void setRecursosCadastrados(ArrayList<RecursoProdutoConcreto> RecursosCadastrados) {
         this.RecursosCadastrados = RecursosCadastrados;
     }

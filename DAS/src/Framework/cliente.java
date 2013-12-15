@@ -126,31 +126,17 @@ do{
        
        public static void BuscarRecurso (){
                
-               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+               FachadaRecurso f = new FachadaRecurso ();              
                String NumeroPatrimonioBuscar;
-               int i=0;
                NumeroPatrimonioBuscar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja buscar: ");
-               fabricaconcreta.getRecursosCadastrados();
-                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
-                      if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
-                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
-                       }
-                 }
-
+               f.buscarRecursoFachada(NumeroPatrimonioBuscar);
 } 
        
         public static void BuscarUsuario (){
-               
-               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
                String MatriculaBuscar;
-               int i;
+               FachadaUsuario f = new FachadaUsuario ();  
                MatriculaBuscar = JOptionPane.showInputDialog("Informe o numero da matricula do usuario que deseja pesquisar ");
-               fabricaconcreta.getUsuariosCadastrados();
-                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
-                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
-                   JOptionPane.showMessageDialog(null,fabricaconcreta.getUsuariosCadastrados().get(i).toString());
-               } 
-                 }
+              f.buscarProdutoFachada(MatriculaBuscar);
 } 
 
        public static void alteraUsuario (){

@@ -13,4 +13,10 @@ public class FachadaRecurso {
         fabricaconcreta.alteraRecurso(NumeroPatrimonioAlterar);
     
     }
+    
+    public void buscarRecursoFachada (String NumeroPatrimonioBuscar){
+        fabricaconcreta.buscarRecurso(NumeroPatrimonioBuscar);
+        
+    
+    }
 }
