@@ -22,6 +22,7 @@ public void alocar (){
     Alocacao alocacao= null;
     String numeroPatrimonioAlocar= null;
     String matriculaUsuarioAlocar= null;
+    boolean produtoJaAlocado = false;
     boolean achouRecurso = false;
     boolean achouUsuario = false ;
     
@@ -56,17 +57,19 @@ public void alocar (){
         
        
        // metodo verificar
-       if (achouRecurso==true && achouUsuario==true)
+       if (achouRecurso==true && achouUsuario==true){
         for (int k=0; k<alocacoes.size();k++){
             if (alocacoes.get(k).getRecurso().equals(alocacao.getRecurso())){
                 if (alocacoes.get(k).getAlocarData().equals(alocacao.getAlocarData())){
                     JOptionPane.showMessageDialog(null, "Produto já esta alocado para essa data");
-                }
-                else{
-                    alocacoes.add(alocacao);
+                    produtoJaAlocado =true;
                 }
             }
- }
+        }
+        if (produtoJaAlocado==false){
+          alocacoes.add(alocacao);
+        }     
+      }
 }
 
     public Alocacao(String recurso, String usuario, String alocarData) {
