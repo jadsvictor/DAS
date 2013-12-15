@@ -32,14 +32,19 @@ public abstract class RecursoFabricaAbstrata {
                int i;
                RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();             
                fabricaconcreta.getRecursosCadastrados();
-                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size() || encontrou!=true; i++) {  
-                      if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio()==NumeroPatrimonioAlterar){
-                             tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
+                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
+                      if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio().equals(NumeroPatrimonioAlterar)){
+                            tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
                              fabricaconcreta.getRecursosCadastrados().remove(i);
                              fabricaconcreta.criarProduto(tipoRecursoAlterar);  
+                             encontrou=true;
                              cliente.menuRecurso();
                       }
                  } 
+                 
+                 if (encontrou==false){
+                     cliente.menuRecurso();
+                 }
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
               

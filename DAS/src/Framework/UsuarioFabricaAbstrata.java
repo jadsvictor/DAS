@@ -14,23 +14,23 @@ public abstract class UsuarioFabricaAbstrata {
      public void criarUsuario(int tipoUsuario){
     	         
 	        // Create the factory object
-	        UsuarioFabricaConcreta fabrica = new UsuarioFabricaConcreta();
+	        UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
 	        
 	        // criando produto abstrato         
 	        UsuarioProdutoConcreto produto = null; 
                 
-                produto = (UsuarioProdutoConcreto) fabrica.factoryMethod(tipoUsuario);
+                produto = (UsuarioProdutoConcreto) fabricaconcretaU.factoryMethod(tipoUsuario);
                 usuarioscadastrados.add(produto);  
             
     }
 
      public void buscarUsuario (String MatriculaBuscar){
                boolean achou=false;
-               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();               
+               UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();               
                int i;
-                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
-                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
-                   JOptionPane.showMessageDialog(null,fabricaconcreta.getUsuariosCadastrados().get(i).toString());
+                 for (i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
+                      if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
+                   JOptionPane.showMessageDialog(null,fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
                 achou=true; 
                       cliente.menuRecurso();
                       } 
@@ -44,33 +44,40 @@ public abstract class UsuarioFabricaAbstrata {
      public void alteraUsuario (String MatriculaAlterar){
                
                int tipoUsuarioAlterar=0;
+               boolean encontrou=false;
                int i;
-               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
-               fabricaconcreta.getUsuariosCadastrados();
-                    for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
-                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
-                             tipoUsuarioAlterar = fabricaconcreta.getUsuariosCadastrados().get(i).getTipoUsuario();
-                             fabricaconcreta.getUsuariosCadastrados().remove(i);
-                              fabricaconcreta.criarUsuario(tipoUsuarioAlterar);                       
+               UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
+               fabricaconcretaU.getUsuariosCadastrados();
+                    for (i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
+                      if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
+                             tipoUsuarioAlterar = fabricaconcretaU.getUsuariosCadastrados().get(i).getTipoUsuario();
+                             fabricaconcretaU.getUsuariosCadastrados().remove(i);
+                              fabricaconcretaU.criarUsuario(tipoUsuarioAlterar);
+                              encontrou=true;
+                             cliente.menuRecurso();
                       }
-                   }  
+                 } 
+                 
+                 if (encontrou==false){
+                     cliente.menuRecurso();
+                 }
      }
      
      public void excluirUsuario(String MatriculaExcluir){
-          UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+          UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
           
           int i =0;
           int excluir;
-          for(i=0; i< fabricaconcreta.getUsuariosCadastrados().size(); i++){
-              if(fabricaconcreta.getUsuariosCadastrados().get(i).matricula.equals(MatriculaExcluir)){
-                  JOptionPane.showMessageDialog(null, fabricaconcreta.getUsuariosCadastrados().get(i).toString());
+          for(i=0; i< fabricaconcretaU.getUsuariosCadastrados().size(); i++){
+              if(fabricaconcretaU.getUsuariosCadastrados().get(i).matricula.equals(MatriculaExcluir)){
+                  JOptionPane.showMessageDialog(null, fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
                   
                       excluir = Integer.parseInt(JOptionPane.showInputDialog("Deseja remover o usuário?"
                                                                             + "1 - sim"
                                                                             + "2 - nao"));
                     switch(excluir){
                         case 1:
-                              fabricaconcreta.getUsuariosCadastrados().remove(i);
+                              fabricaconcretaU.getUsuariosCadastrados().remove(i);
                             JOptionPane.showMessageDialog(null, "Usuario excluido com sucesso!");
                             break;
                         case 2:

@@ -3,22 +3,22 @@ import Usuario.UsuarioFabricaConcreta;
 
 public class FachadaUsuario {
     
- UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+ UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
  
     public void criarProdutoFachada (int tipoUsuario){ 
-        fabricaconcreta.criarUsuario(tipoUsuario);
+        fabricaconcretaU.criarUsuario(tipoUsuario);
     }
     
      public void alterarProdutoFachada (String MatriculaAlterar){
-        fabricaconcreta.alteraUsuario(MatriculaAlterar);
+        fabricaconcretaU.alteraUsuario(MatriculaAlterar);
     }
     
      public void buscarProdutoFachada (String MatriculaAlterar){
-         fabricaconcreta.buscarUsuario(MatriculaAlterar);
+         fabricaconcretaU.buscarUsuario(MatriculaAlterar);
      }
      
      public void excluirProdutoFachada(String MatriculaExcluir){
-         fabricaconcreta.excluirUsuario(MatriculaExcluir);
+         fabricaconcretaU.excluirUsuario(MatriculaExcluir);
      }
      
 }

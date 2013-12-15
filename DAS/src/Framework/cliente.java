@@ -104,7 +104,7 @@ do{
            
        public static void CadastroRecurso(){
         int tipoRecurso;
-        FachadaRecurso f = new FachadaRecurso ();
+        FachadaRecurso fCR = new FachadaRecurso ();
         //RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
         
         do{
@@ -115,13 +115,13 @@ do{
            
        
                 
-                f.criarProdutoFachada(tipoRecurso);
+                fCR.criarProdutoFachada(tipoRecurso);
                 //fabricaconcreta.criarProduto(tipoRecurso);
        
                  //exibir recurso cadastrado
                  //fabricaconcreta.getRecursosCadastrados();
                 
-                JOptionPane.showMessageDialog(null,f.fabricaconcreta.getRecursosCadastrados().toString());
+                JOptionPane.showMessageDialog(null,fCR.fabricaconcreta.getRecursosCadastrados().toString());
                 //JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
         
             }while(tipoRecurso != 3);
@@ -142,17 +142,17 @@ do{
        
        public static void cadastroSolicitante(){
            int tipoUsuario;
-           FachadaUsuario f = new FachadaUsuario ();         
+           FachadaUsuario fCS = new FachadaUsuario ();         
            do{
                tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
                                                                            "\n 1 - Professor."+
                                                                            "\n 2 - Aluno."
                                                                           +"\n 3- Voltar"));
                
-               f.criarProdutoFachada(tipoUsuario);
+               fCS.criarProdutoFachada(tipoUsuario);
                
                //exibir solicitante cadastrado
-               JOptionPane.showMessageDialog(null, f.fabricaconcreta.getUsuariosCadastrados().toString());
+               JOptionPane.showMessageDialog(null, fCS.fabricaconcretaU.getUsuariosCadastrados().toString());
                
            }while(tipoUsuario != 3);
            
@@ -163,18 +163,18 @@ do{
  // ele exclui o que estava na memoria e cria um novo
        public static void alteraRecurso (){
        
-                FachadaRecurso f = new FachadaRecurso ();
+                FachadaRecurso fAR = new FachadaRecurso ();
                 String NumeroPatrimonioAlterar;
                 NumeroPatrimonioAlterar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja alterar: ");
-                f.alterarProdutoFachada(NumeroPatrimonioAlterar);
+                fAR.alterarProdutoFachada(NumeroPatrimonioAlterar);
 } 
        
        public static void BuscarRecurso (){
                
-               FachadaRecurso f = new FachadaRecurso ();              
+               FachadaRecurso fBR = new FachadaRecurso ();              
                String NumeroPatrimonioBuscar;
                NumeroPatrimonioBuscar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja buscar: ");
-               f.buscarRecursoFachada(NumeroPatrimonioBuscar);
+               fBR.buscarRecursoFachada(NumeroPatrimonioBuscar);
                
               //menuRecurso();
                
@@ -183,34 +183,34 @@ do{
        
         public static void BuscarUsuario (){
                String MatriculaBuscar;
-               FachadaUsuario f = new FachadaUsuario ();  
+               FachadaUsuario fBU = new FachadaUsuario ();  
                MatriculaBuscar = JOptionPane.showInputDialog("Informe o numero da matricula do usuario que deseja pesquisar ");
-              f.buscarProdutoFachada(MatriculaBuscar);
+              fBU.buscarProdutoFachada(MatriculaBuscar);
               
               //SmenuPrincipal();
 } 
 
        public static void alteraUsuario (){
                
-               FachadaUsuario f = new FachadaUsuario ();                            
+               FachadaUsuario fAU = new FachadaUsuario ();                            
                String MatriculaAlterar;
                MatriculaAlterar = JOptionPane.showInputDialog("Informe a matricula do usuario que deseja alterar: ");
-               f.alterarProdutoFachada(MatriculaAlterar);
+               fAU.alterarProdutoFachada(MatriculaAlterar);
           
 } 
        public static void excluirRecurso(){
-           FachadaRecurso f = new FachadaRecurso();
+           FachadaRecurso fER = new FachadaRecurso();
            String NumeroPatrimonioExcluir;
            NumeroPatrimonioExcluir = JOptionPane.showInputDialog("Informe o numero de serie do Recurso que desja excluir: ");
-           f.excluirRecursoFachada(NumeroPatrimonioExcluir);
+           fER.excluirRecursoFachada(NumeroPatrimonioExcluir);
           
        }
        
        public static void excluirUsuario(){
-           FachadaUsuario f = new FachadaUsuario();
+           FachadaUsuario fEU = new FachadaUsuario();
            String MatriculaExcluir;
            MatriculaExcluir = JOptionPane.showInputDialog("Informe a matricula do usuario que deseja excluir:");
-           f.excluirProdutoFachada(MatriculaExcluir);
+           fEU.excluirProdutoFachada(MatriculaExcluir);
        }
 
 } 

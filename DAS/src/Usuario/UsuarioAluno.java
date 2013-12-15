@@ -2,7 +2,7 @@ package Usuario;
 
 import Framework.UsuarioProdutoAbstrato;
 
-public class UsuarioAluno extends UsuarioProdutoAbstrato {
+public class UsuarioAluno extends UsuarioProdutoConcreto{
 		
     String semestreEntrada;
     String curso;
