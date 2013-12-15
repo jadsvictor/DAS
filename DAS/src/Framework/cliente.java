@@ -63,7 +63,7 @@ do{
                         alteraUsuario ();
                         break;
                     case 4: 
-                        excluirRecurso();
+                        excluirUsuario();
                         break;
                     default:
                         break;
@@ -204,6 +204,13 @@ do{
            NumeroPatrimonioExcluir = JOptionPane.showInputDialog("Informe o numero de serie do Recurso que desja excluir: ");
            f.excluirRecursoFachada(NumeroPatrimonioExcluir);
           
+       }
+       
+       public static void excluirUsuario(){
+           FachadaUsuario f = new FachadaUsuario();
+           String MatriculaExcluir;
+           MatriculaExcluir = JOptionPane.showInputDialog("Informe a matricula do usuario que deseja excluir:");
+           f.excluirProdutoFachada(MatriculaExcluir);
        }
 
 } 
