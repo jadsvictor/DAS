@@ -25,7 +25,7 @@ public abstract class RecursoFabricaAbstrata {
             
     }
 
-      public void alteraRecurso (String NumeroPatrimonioAlterar){
+      public void alteraRecurso (String NumeroPatrimonioAlterar){  
                
                int tipoRecursoAlterar=0;
                boolean encontrou=false;
@@ -36,14 +36,10 @@ public abstract class RecursoFabricaAbstrata {
                       if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio()==NumeroPatrimonioAlterar){
                              tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
                              fabricaconcreta.getRecursosCadastrados().remove(i);
-                                encontrou=true;
-                       }
-                 }
-                    if(encontrou==true){
-                    fabricaconcreta.criarProduto(tipoRecursoAlterar);
-                    }
-} 
-      
+                             fabricaconcreta.criarProduto(tipoRecursoAlterar);   
+                      }
+                 } 
+     }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
       
               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();

@@ -39,21 +39,18 @@ public abstract class UsuarioFabricaAbstrata {
      public void alteraUsuario (String MatriculaAlterar){
                
                int tipoUsuarioAlterar=0;
-               boolean encontrou=false;
                int i;
                UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
                fabricaconcreta.getUsuariosCadastrados();
-                    for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size() || encontrou!=true; i++) {  
+                    for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
                       if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
                              tipoUsuarioAlterar = fabricaconcreta.getUsuariosCadastrados().get(i).getTipoUsuario();
                              fabricaconcreta.getUsuariosCadastrados().remove(i);
-                                encontrou=true;
-                       }
-                 }  
-                    if(encontrou==true){
-                    fabricaconcreta.criarUsuario(tipoUsuarioAlterar);
-                    }  
-}
+                              fabricaconcreta.criarUsuario(tipoUsuarioAlterar);                       
+                      }
+                   }  
+     }
+     
      public void excluirUsuario(String MatriculaExcluir){
           UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
           
@@ -77,7 +74,6 @@ public abstract class UsuarioFabricaAbstrata {
                         default:
                              break;
                     }  
-                  
               }
           }
      }
