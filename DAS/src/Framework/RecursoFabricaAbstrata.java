@@ -42,18 +42,21 @@ public abstract class RecursoFabricaAbstrata {
                  } 
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
-      
+              
+              boolean achou=false;
               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
               int i=0;                
                  for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
                       JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
+                      achou=true; 
                       cliente.menuRecurso();
                        }
                  }
-                 //cliente.menuRecurso();
-                 
-    }
+                if (achou==false){
+               cliente.menuRecurso();
+                 }
+     }
     
       public void excluirRecurso(String NumeroPatrimonioExcluir){
           RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();

@@ -25,15 +25,20 @@ public abstract class UsuarioFabricaAbstrata {
     }
 
      public void buscarUsuario (String MatriculaBuscar){
-      
+               boolean achou=false;
                UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();               
                int i;
                  for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
                       if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
                    JOptionPane.showMessageDialog(null,fabricaconcreta.getUsuariosCadastrados().get(i).toString());
-               } 
+                achou=true; 
+                      cliente.menuRecurso();
+                      } 
                  }
-         
+                 
+                 if (achou==false){
+               cliente.menuRecurso();
+                 }      
      }
        
      public void alteraUsuario (String MatriculaAlterar){
