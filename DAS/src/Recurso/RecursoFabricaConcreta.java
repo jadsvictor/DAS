@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 
 public class RecursoFabricaConcreta extends RecursoFabricaAbstrata {
     
-   static ArrayList<RecursoProdutoConcreto> RecursosCadastrados = new ArrayList<RecursoProdutoConcreto> ();
-
     @Override
     public  RecursoProdutoAbstrato factoryMethod(int tipoRecurso) {
        switch (tipoRecurso){
@@ -39,27 +37,4 @@ public class RecursoFabricaConcreta extends RecursoFabricaAbstrata {
     }         
     }
 
-    public void criarProduto (int tipoRecurso){
-       
-	        // Create the factory object
-	        RecursoFabricaConcreta fabrica = new RecursoFabricaConcreta();
-	        
-	        // criando produto abstrato         
-	        RecursoProdutoConcreto produto = null; 
-                
-               produto = (RecursoProdutoConcreto) fabrica.factoryMethod(tipoRecurso);
-                RecursosCadastrados.add(produto);  
-            
-    }
-
-    
-
-    public void setRecursosCadastrados(ArrayList<RecursoProdutoConcreto> RecursosCadastrados) {
-        this.RecursosCadastrados = RecursosCadastrados;
-    }
-    
-    public ArrayList<RecursoProdutoConcreto> getRecursosCadastrados() {
-        return RecursosCadastrados;
-    }
-    
 }

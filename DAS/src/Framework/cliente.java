@@ -97,18 +97,17 @@ do{
        
        public static void cadastroSolicitante(){
            int tipoUsuario;
-           UsuarioFabricaConcreta usuarioscadastrados = new UsuarioFabricaConcreta();
-           
+           FachadaRecurso f = new FachadaRecurso ();         
            do{
                tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
                                                                            "\n 1 - Professor."+
                                                                            "\n 2 - Aluno."
                                                                           +"\n 3- Sair"));
                
-               usuarioscadastrados.criarUsuario(tipoUsuario);
+               f.criarProdutoFachada(tipoUsuario);
                
                //exibir solicitante cadastrado
-               JOptionPane.showMessageDialog(null, usuarioscadastrados.getUsuariosCadastrados().toString());
+               JOptionPane.showMessageDialog(null, f.fabricaconcreta.getRecursosCadastrados().toString());
                
            }while(tipoUsuario != 3);
            
@@ -118,24 +117,11 @@ do{
  //Ele procura um recurso pelo numero de patrimonio, se achar um numero igual, entao 
  // ele exclui o que estava na memoria e cria um novo
        public static void alteraRecurso (){
-               
-               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
-               String NumeroPatrimonioAlterar;
-               int tipoRecursoAlterar=0;
-               boolean encontrou=false;
-               int i;
-               NumeroPatrimonioAlterar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja alterar: ");
-               fabricaconcreta.getRecursosCadastrados();
-                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size() || encontrou!=true; i++) {  
-                      if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio()==NumeroPatrimonioAlterar){
-                             tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
-                             fabricaconcreta.getRecursosCadastrados().remove(i);
-                                encontrou=true;
-                       }
-                 }
-                    if(encontrou==true){
-                    fabricaconcreta.criarProduto(tipoRecursoAlterar);
-                    }
+       
+                FachadaRecurso f = new FachadaRecurso ();
+                String NumeroPatrimonioAlterar;
+                NumeroPatrimonioAlterar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja alterar: ");
+                f.alterarProdutoFachada(NumeroPatrimonioAlterar);
 } 
        
        public static void BuscarRecurso (){
@@ -169,27 +155,11 @@ do{
 
        public static void alteraUsuario (){
                
-               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+               FachadaUsuario f = new FachadaUsuario ();                            
                String MatriculaAlterar;
-               int tipoRecursoAlterar=0;
-               boolean encontrou=false;
-               int i;
                MatriculaAlterar = JOptionPane.showInputDialog("Informe a matricula do usuario que deseja alterar: ");
-               fabricaconcreta.getUsuariosCadastrados();
-              
-                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size() || encontrou!=true; i++) {  
-                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
-                             tipoRecursoAlterar = fabricaconcreta.getUsuariosCadastrados().get(i).getTipoUsuario();
-                             fabricaconcreta.getUsuariosCadastrados().remove(i);
-                                encontrou=true;
-                       }
-                 }  
-                    if(encontrou==true){
-                    fabricaconcreta.criarUsuario(tipoRecursoAlterar);
-                    }
-               
-                             
-
+               f.alterarProdutoFachada(MatriculaAlterar);
+          
 } 
 
 } 

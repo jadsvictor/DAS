@@ -1,13 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Framework;
+import Usuario.UsuarioFabricaConcreta;
 
-/**
- *
- * @author jads
- */
 public class FachadaUsuario {
+    
+ UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+ 
+    public void criarProdutoFachada (int tipoRecurso){ 
+        fabricaconcreta.criarUsuario(tipoRecurso);
+    }
+    
+     public void alterarProdutoFachada (String Matricula){
+        fabricaconcreta.alteraUsuario(Matricula);
+    
+    }
     
 }
