@@ -17,4 +17,8 @@ public class FachadaUsuario {
          fabricaconcreta.buscarUsuario(MatriculaAlterar);
      }
      
+     public void excluirProdutoFachada(String MatriculaExcluir){
+         fabricaconcreta.excluirUsuario(MatriculaExcluir);
+     }
+     
 }

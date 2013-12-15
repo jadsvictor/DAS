@@ -53,7 +53,38 @@ public abstract class RecursoFabricaAbstrata {
                       JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
                        }
                  }
+                 cliente.menuPrincipal();
+                 
     }
+    
+      public void excluirRecurso(String NumeroPatrimonioExcluir){
+          RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+          
+          int i =0;
+          int excluir;
+          for(i=0; i< fabricaconcreta.getRecursosCadastrados().size(); i++){
+              if(fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioExcluir)){
+                  JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().get(i).toString());
+                  
+                      excluir = Integer.parseInt(JOptionPane.showInputDialog("Deseja remover o Recurso?"
+                                                                            + "1 - sim"
+                                                                            + "2 - nao"));
+                    switch(excluir){
+                        case 1:
+                              fabricaconcreta.getRecursosCadastrados().remove(i);
+                            JOptionPane.showMessageDialog(null, "Recurso excluido com sucesso!");
+                            break;
+                        case 2:
+                            cliente.menuPrincipal();
+                            break;
+                        default:
+                             break;
+                    }  
+                  
+              }
+          }
+          
+      }
       
     public void setRecursosCadastrados(ArrayList<RecursoProdutoConcreto> RecursosCadastrados) {
         this.RecursosCadastrados = RecursosCadastrados;

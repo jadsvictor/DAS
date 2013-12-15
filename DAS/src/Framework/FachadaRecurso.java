@@ -19,4 +19,8 @@ public class FachadaRecurso {
         
     
     }
+    
+    public void excluirRecursoFachada (String NumeroPatrimonioExcluir){
+        fabricaconcreta.excluirRecurso(NumeroPatrimonioExcluir);
+    }
 }

@@ -11,17 +11,18 @@ import javax.swing.JOptionPane;
 public class cliente {
 	
        public static void main(String[] args){
-
+           
+           menuPrincipal();
+/*
 int escolha;
-
-
 
 // escolha entre usuario e recurso
 do{
          escolha = Integer.parseInt(JOptionPane.showInputDialog("Cadastro:" +
-                                                                    "\n 1 - Solicitante"+
-                                                                    "\n 2 - Recurso"+
-                                                                    "\n 3 - Sair"));
+                                                                    "\n 1 - cadastro recurso"+
+                                                                    "\n 2 - buscar Recurso"+
+                                                                    "\n 3 - excluir recuros"
+                                                                   + "\n 4 - sair"));
          
          switch(escolha){
         case 1:
@@ -31,31 +32,43 @@ do{
             
             BuscarRecurso ();
             break;
+        case 3:
+            excluirRecurso();
+            break;
         default:
             break;
            }
-}while(escolha != 3);
+}while(escolha != 4);*/
 
-/*    
-//for(int i=0; i<2; i++){
-do{
-        tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
-                                                               + "\n1-Projetor"
-                                                               + "\n2 - sala"
-                                                                +"\n3 - sair"));
-           
-       
-         
-       fabricaconcreta.criarProduto(tipoRecurso);
-       
-       //exibir recurso cadastrado
-       fabricaconcreta.getRecursosCadastrados();
-       JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
-        
- }while(tipoRecurso != 3);*/
 
         
            }
+       public static void menuPrincipal(){
+           int escolha;
+
+            // escolha entre usuario e recurso
+        do{
+                 escolha = Integer.parseInt(JOptionPane.showInputDialog("Cadastro:" +
+                                                                        "\n 1 - cadastro recurso"+
+                                                                        "\n 2 - buscar Recurso"+
+                                                                        "\n 3 - excluir recuros"
+                                                                       + "\n 4 - sair"));
+         
+                    switch(escolha){
+                    case 1:
+                        CadastroRecurso();
+                        break;
+                    case 2: 
+                         BuscarRecurso ();
+                        break;
+                    case 3:
+                        excluirRecurso();
+                        break;
+                    default:
+                        break;
+                    }
+            }while(escolha != 4);
+       }
            
        public static void CadastroRecurso(){
         int tipoRecurso;
@@ -130,6 +143,10 @@ do{
                String NumeroPatrimonioBuscar;
                NumeroPatrimonioBuscar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja buscar: ");
                f.buscarRecursoFachada(NumeroPatrimonioBuscar);
+               
+              // menuPrincipal();
+               
+               
 } 
        
         public static void BuscarUsuario (){
@@ -137,6 +154,8 @@ do{
                FachadaUsuario f = new FachadaUsuario ();  
                MatriculaBuscar = JOptionPane.showInputDialog("Informe o numero da matricula do usuario que deseja pesquisar ");
               f.buscarProdutoFachada(MatriculaBuscar);
+              
+              //SmenuPrincipal();
 } 
 
        public static void alteraUsuario (){
@@ -147,6 +166,13 @@ do{
                f.alterarProdutoFachada(MatriculaAlterar);
           
 } 
+       public static void excluirRecurso(){
+           FachadaRecurso f = new FachadaRecurso();
+           String NumeroPatrimonioExcluir;
+           NumeroPatrimonioExcluir = JOptionPane.showInputDialog("Informe o numero de serie do Recurso que desja excluir: ");
+           f.excluirRecursoFachada(NumeroPatrimonioExcluir);
+          
+       }
 
 } 
 

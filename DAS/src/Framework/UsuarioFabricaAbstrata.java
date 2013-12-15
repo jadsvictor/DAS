@@ -54,6 +54,33 @@ public abstract class UsuarioFabricaAbstrata {
                     fabricaconcreta.criarUsuario(tipoUsuarioAlterar);
                     }  
 }
+     public void excluirUsuario(String MatriculaExcluir){
+          UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+          
+          int i =0;
+          int excluir;
+          for(i=0; i< fabricaconcreta.getUsuariosCadastrados().size(); i++){
+              if(fabricaconcreta.getUsuariosCadastrados().get(i).matricula.equals(MatriculaExcluir)){
+                  JOptionPane.showMessageDialog(null, fabricaconcreta.getUsuariosCadastrados().get(i).toString());
+                  
+                      excluir = Integer.parseInt(JOptionPane.showInputDialog("Deseja remover o usuário?"
+                                                                            + "1 - sim"
+                                                                            + "2 - nao"));
+                    switch(excluir){
+                        case 1:
+                              fabricaconcreta.getUsuariosCadastrados().remove(i);
+                            JOptionPane.showMessageDialog(null, "Usuario excluido com sucesso!");
+                            break;
+                        case 2:
+                            cliente.menuPrincipal();
+                            break;
+                        default:
+                             break;
+                    }  
+                  
+              }
+          }
+     }
       
      public ArrayList<UsuarioProdutoConcreto> getUsuariosCadastrados() {
         return usuarioscadastrados;
