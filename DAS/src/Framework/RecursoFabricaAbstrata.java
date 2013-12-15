@@ -53,7 +53,7 @@ public abstract class RecursoFabricaAbstrata {
                       JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
                        }
                  }
-                 cliente.menuPrincipal();
+                 cliente.menuRecurso();
                  
     }
     
@@ -75,7 +75,7 @@ public abstract class RecursoFabricaAbstrata {
                             JOptionPane.showMessageDialog(null, "Recurso excluido com sucesso!");
                             break;
                         case 2:
-                            cliente.menuPrincipal();
+                            cliente.menuRecurso();
                             break;
                         default:
                              break;

@@ -12,47 +12,76 @@ public class cliente {
 	
        public static void main(String[] args){
            
-           menuPrincipal();
-/*
 int escolha;
 
-// escolha entre usuario e recurso
+// escolha funçoes 
 do{
          escolha = Integer.parseInt(JOptionPane.showInputDialog("Cadastro:" +
-                                                                    "\n 1 - cadastro recurso"+
-                                                                    "\n 2 - buscar Recurso"+
-                                                                    "\n 3 - excluir recuros"
+                                                                    "\n 1 - Funçoes Recurso"+
+                                                                    "\n 2 - Funcores Usuario"+
+                                                                    "\n 3 - Alocar Recurso"
                                                                    + "\n 4 - sair"));
          
          switch(escolha){
         case 1:
-            CadastroRecurso();
+            menuRecurso();
             break;
         case 2:
             
-            BuscarRecurso ();
+           menuUsuario();
             break;
         case 3:
-            excluirRecurso();
+            
             break;
         default:
             break;
            }
-}while(escolha != 4);*/
+}while(escolha != 4);
 
 
         
            }
-       public static void menuPrincipal(){
+
+       public static void menuUsuario(){
+           int escolha;
+           do{
+              escolha = Integer.parseInt(JOptionPane.showInputDialog("SOLICITANTE:"
+                                                                    + "\n 1 - Cadastro de Solicitante."
+                                                                    + "\n 2 - Buscar Solicitante"
+                                                                    + "\n 3 - Alterar Solicitante"
+                                                                    + "\n 4 - Excluir Solicitante"
+                                                                    + "\n 5 - Voltar"));
+              
+              switch(escolha){
+                  case 1:
+                        cadastroSolicitante();
+                        break;
+                    case 2: 
+                         BuscarUsuario ();
+                        break;
+                    case 3:
+                        alteraUsuario ();
+                        break;
+                    case 4: 
+                        excluirRecurso();
+                        break;
+                    default:
+                        break;
+              }
+           } while(escolha != 5);
+       }
+       
+       public static void menuRecurso(){
            int escolha;
 
             // escolha entre usuario e recurso
         do{
-                 escolha = Integer.parseInt(JOptionPane.showInputDialog("Cadastro:" +
+                 escolha = Integer.parseInt(JOptionPane.showInputDialog("RECURSO:" +
                                                                         "\n 1 - cadastro recurso"+
                                                                         "\n 2 - buscar Recurso"+
-                                                                        "\n 3 - excluir recuros"
-                                                                       + "\n 4 - sair"));
+                                                                        "\n 3 - Alterar Recurso"+
+                                                                        "\n 4 - excluir recuros"
+                                                                       + "\n 5 - voltar"));
          
                     switch(escolha){
                     case 1:
@@ -62,12 +91,15 @@ do{
                          BuscarRecurso ();
                         break;
                     case 3:
+                        alteraRecurso ();
+                        break;
+                    case 4: 
                         excluirRecurso();
                         break;
                     default:
                         break;
                     }
-            }while(escolha != 4);
+            }while(escolha != 5);
        }
            
        public static void CadastroRecurso(){

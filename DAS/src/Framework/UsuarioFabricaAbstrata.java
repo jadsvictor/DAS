@@ -72,7 +72,7 @@ public abstract class UsuarioFabricaAbstrata {
                             JOptionPane.showMessageDialog(null, "Usuario excluido com sucesso!");
                             break;
                         case 2:
-                            cliente.menuPrincipal();
+                            cliente.menuUsuario();
                             break;
                         default:
                              break;
