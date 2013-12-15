@@ -58,8 +58,8 @@ public void alocar (){
        // metodo verificar
        if (achouRecurso==true && achouUsuario==true)
         for (int k=0; k<alocacoes.size();k++){
-            if (alocacoes.get(k).getRecurso()==alocacao.getRecurso()){
-                if (alocacoes.get(k).getAlocarData()==alocacao.getAlocarData()){
+            if (alocacoes.get(k).getRecurso().equals(alocacao.getRecurso())){
+                if (alocacoes.get(k).getAlocarData().equals(alocacao.getAlocarData())){
                     JOptionPane.showMessageDialog(null, "Produto já esta alocado para essa data");
                 }
                 else{
