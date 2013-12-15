@@ -1,15 +1,16 @@
 package Framework;
 
-import Framework.RecursoFabricaAbstrata;
+
 import Recurso.RecursoFabricaConcreta;
+import Recurso.RecursoProdutoConcreto;
 import Usuario.UsuarioFabricaConcreta;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 	 
 public class cliente {
-	 
-	   public static void main(String[] args){
+	
+       public static void main(String[] args){
 
 int escolha;
 
@@ -24,10 +25,11 @@ do{
          
          switch(escolha){
         case 1:
-            cadastroSolicitante();
+            CadastroRecurso();
             break;
         case 2:
-            CadastroRecurso();
+            
+            BuscarRecurso ();
             break;
         default:
             break;
@@ -57,7 +59,8 @@ do{
            
        public static void CadastroRecurso(){
         int tipoRecurso;
-        RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+        FachadaRecurso f = new FachadaRecurso ();
+        //RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
         
         do{
                 tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
@@ -66,14 +69,18 @@ do{
                                                                             +"\n3 - sair"));
            
        
-         
-                fabricaconcreta.criarProduto(tipoRecurso);
+                
+                f.criarProdutoFachada(tipoRecurso);
+                //fabricaconcreta.criarProduto(tipoRecurso);
        
                  //exibir recurso cadastrado
                  //fabricaconcreta.getRecursosCadastrados();
-                JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
+                
+                JOptionPane.showMessageDialog(null,f.fabricaconcreta.getRecursosCadastrados().toString());
+                //JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
         
             }while(tipoRecurso != 3);
+        
         /*
         fabricaconcreta.getRecursosCadastrados();
         for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
@@ -90,7 +97,7 @@ do{
        
        public static void cadastroSolicitante(){
            int tipoUsuario;
-           UsuarioFabricaConcreta UFabricaConcreta = new UsuarioFabricaConcreta();
+           UsuarioFabricaConcreta usuarioscadastrados = new UsuarioFabricaConcreta();
            
            do{
                tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
@@ -98,11 +105,100 @@ do{
                                                                            "\n 2 - Aluno."
                                                                           +"\n 3- Sair"));
                
-               UFabricaConcreta.criarUsuario(tipoUsuario);
+               usuarioscadastrados.criarUsuario(tipoUsuario);
                
                //exibir solicitante cadastrado
-               JOptionPane.showMessageDialog(null, UFabricaConcreta.getUsuariosCadastrados().toString());
+               JOptionPane.showMessageDialog(null, usuarioscadastrados.getUsuariosCadastrados().toString());
                
            }while(tipoUsuario != 3);
+           
+           
        }
-}
+             
+ //Ele procura um recurso pelo numero de patrimonio, se achar um numero igual, entao 
+ // ele exclui o que estava na memoria e cria um novo
+       public static void alteraRecurso (){
+               
+               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+               String NumeroPatrimonioAlterar;
+               int tipoRecursoAlterar=0;
+               boolean encontrou=false;
+               int i;
+               NumeroPatrimonioAlterar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja alterar: ");
+               fabricaconcreta.getRecursosCadastrados();
+                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size() || encontrou!=true; i++) {  
+                      if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio()==NumeroPatrimonioAlterar){
+                             tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
+                             fabricaconcreta.getRecursosCadastrados().remove(i);
+                                encontrou=true;
+                       }
+                 }
+                    if(encontrou==true){
+                    fabricaconcreta.criarProduto(tipoRecursoAlterar);
+                    }
+} 
+       
+       public static void BuscarRecurso (){
+               
+               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+               String NumeroPatrimonioBuscar;
+               int i=0;
+               NumeroPatrimonioBuscar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja buscar: ");
+               fabricaconcreta.getRecursosCadastrados();
+                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
+                      if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
+                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
+                       }
+                 }
+
+} 
+       
+        public static void BuscarUsuario (){
+               
+               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+               String MatriculaBuscar;
+               int i;
+               MatriculaBuscar = JOptionPane.showInputDialog("Informe o numero da matricula do usuario que deseja pesquisar ");
+               fabricaconcreta.getUsuariosCadastrados();
+                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size(); i++) {  
+                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
+                   JOptionPane.showMessageDialog(null,fabricaconcreta.getUsuariosCadastrados().get(i).toString());
+               } 
+                 }
+} 
+
+       public static void alteraUsuario (){
+               
+               UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
+               String MatriculaAlterar;
+               int tipoRecursoAlterar=0;
+               boolean encontrou=false;
+               int i;
+               MatriculaAlterar = JOptionPane.showInputDialog("Informe a matricula do usuario que deseja alterar: ");
+               fabricaconcreta.getUsuariosCadastrados();
+              
+                 for (i = 0; i < fabricaconcreta.getUsuariosCadastrados().size() || encontrou!=true; i++) {  
+                      if (fabricaconcreta.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
+                             tipoRecursoAlterar = fabricaconcreta.getUsuariosCadastrados().get(i).getTipoUsuario();
+                             fabricaconcreta.getUsuariosCadastrados().remove(i);
+                                encontrou=true;
+                       }
+                 }  
+                    if(encontrou==true){
+                    fabricaconcreta.criarUsuario(tipoRecursoAlterar);
+                    }
+               
+                             
+
+} 
+
+} 
+
+ 
+
+       
+
+
+
+
+

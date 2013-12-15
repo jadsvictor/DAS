@@ -2,7 +2,7 @@ package Recurso;
 
 import Framework.RecursoProdutoAbstrato;
 
-public class RecursoSala extends RecursoProdutoAbstrato{
+public class RecursoSala extends RecursoProdutoConcreto{
         
         private String numeroSala;
 	private int andarSala;

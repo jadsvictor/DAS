@@ -1,13 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Framework;
 
-/**
- *
- * @author jads
- */
+import Recurso.RecursoFabricaConcreta;
+
 public class FachadaRecurso {
     
+    RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+     private RecursoProdutoAbstrato produto;
+     
+    public void criarProdutoFachada (int tipoRecurso){ 
+        fabricaconcreta.criarProduto(tipoRecurso);
+    }
 }
