@@ -5,8 +5,8 @@ public class FachadaUsuario {
     
  UsuarioFabricaConcreta fabricaconcreta = new UsuarioFabricaConcreta();
  
-    public void criarProdutoFachada (int tipoRecurso){ 
-        fabricaconcreta.criarUsuario(tipoRecurso);
+    public void criarProdutoFachada (int tipoUsuario){ 
+        fabricaconcreta.criarUsuario(tipoUsuario);
     }
     
      public void alterarProdutoFachada (String MatriculaAlterar){

@@ -9,7 +9,7 @@ public abstract class UsuarioFabricaAbstrata {
   
  static ArrayList<UsuarioProdutoConcreto> usuarioscadastrados = new ArrayList<UsuarioProdutoConcreto> ();
  
-     public abstract UsuarioProdutoAbstrato factoryMethod (int tipoRecurso);
+     public abstract UsuarioProdutoAbstrato factoryMethod (int tipoUsuario);
     
      public void criarUsuario(int tipoUsuario){
     	         

@@ -142,7 +142,7 @@ do{
        
        public static void cadastroSolicitante(){
            int tipoUsuario;
-           FachadaRecurso f = new FachadaRecurso ();         
+           FachadaUsuario f = new FachadaUsuario ();         
            do{
                tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
                                                                            "\n 1 - Professor."+
@@ -152,7 +152,7 @@ do{
                f.criarProdutoFachada(tipoUsuario);
                
                //exibir solicitante cadastrado
-               JOptionPane.showMessageDialog(null, f.fabricaconcreta.getRecursosCadastrados().toString());
+               JOptionPane.showMessageDialog(null, f.fabricaconcreta.getUsuariosCadastrados().toString());
                
            }while(tipoUsuario != 3);
            
