@@ -20,7 +20,7 @@ do{
                                                                     "\n 1 - Funçoes Recurso"+
                                                                     "\n 2 - Funcores Usuario"+
                                                                     "\n 3 - Alocar Recurso"
-                                                                   + "\n 4 - sair"));
+                                                                   + "\n 4 - Sair"));
          
          switch(escolha){
         case 1:
@@ -111,7 +111,7 @@ do{
                 tipoRecurso = Integer.parseInt(JOptionPane.showInputDialog("Escolha o Tipo do Recurso"
                                                                            + "\n1-Projetor"
                                                                            + "\n2 - sala"
-                                                                            +"\n3 - sair"));
+                                                                            +"\n3 - Voltar"));
            
        
                 
@@ -147,7 +147,7 @@ do{
                tipoUsuario = Integer.parseInt(JOptionPane.showInputDialog("Escolha o tipo de Solicitante:"+
                                                                            "\n 1 - Professor."+
                                                                            "\n 2 - Aluno."
-                                                                          +"\n 3- Sair"));
+                                                                          +"\n 3- Voltar"));
                
                f.criarProdutoFachada(tipoUsuario);
                
@@ -176,7 +176,7 @@ do{
                NumeroPatrimonioBuscar = JOptionPane.showInputDialog("Informe o numero de serio do Recurso que deseja buscar: ");
                f.buscarRecursoFachada(NumeroPatrimonioBuscar);
                
-              // menuPrincipal();
+              //menuRecurso();
                
                
 } 

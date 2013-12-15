@@ -36,7 +36,8 @@ public abstract class RecursoFabricaAbstrata {
                       if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio()==NumeroPatrimonioAlterar){
                              tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
                              fabricaconcreta.getRecursosCadastrados().remove(i);
-                             fabricaconcreta.criarProduto(tipoRecursoAlterar);   
+                             fabricaconcreta.criarProduto(tipoRecursoAlterar);  
+                             cliente.menuRecurso();
                       }
                  } 
      }      
@@ -46,10 +47,11 @@ public abstract class RecursoFabricaAbstrata {
               int i=0;                
                  for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
-                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());    
+                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
+                      cliente.menuRecurso();
                        }
                  }
-                 cliente.menuRecurso();
+                 //cliente.menuRecurso();
                  
     }
     
