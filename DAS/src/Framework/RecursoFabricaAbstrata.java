@@ -65,6 +65,7 @@ public abstract class RecursoFabricaAbstrata {
               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
               int i=0;                
                  for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
+                     
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
                         JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
                         achou=true; 

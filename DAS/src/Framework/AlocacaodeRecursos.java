@@ -109,6 +109,14 @@ public class AlocacaodeRecursos {
         this.alocarData = alocarData;
     }
 
+    @Override
+    public String toString() {
+        return "AlocacaodeRecursos:" + 
+                "recurso: " + recurso + 
+                "Solicitante: " + usuario + 
+                "Dia: " + alocarData;
+    }
+
     
   
     
