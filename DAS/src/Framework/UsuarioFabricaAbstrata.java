@@ -45,23 +45,17 @@ public abstract class UsuarioFabricaAbstrata {
      public void alteraUsuario (String MatriculaAlterar){
                
                int tipoUsuarioAlterar=0;
-               boolean encontrou=false;
-               int i;
                UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
                fabricaconcretaU.getUsuariosCadastrados();
-                    for (i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
-                      if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula()==MatriculaAlterar){
+                    for (int i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
+                      if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaAlterar)){
                              tipoUsuarioAlterar = fabricaconcretaU.getUsuariosCadastrados().get(i).getTipoUsuario();
-                             fabricaconcretaU.getUsuariosCadastrados().remove(i);
-                              fabricaconcretaU.criarUsuario(tipoUsuarioAlterar);
-                              encontrou=true;
+                             fabricaconcretaU.getUsuariosCadastrados().get(i).setMatricula(JOptionPane.showInputDialog("Informe novo numero de matricula"));
+                             fabricaconcretaU.getUsuariosCadastrados().get(i).setNome(JOptionPane.showInputDialog("Informe novo nome"));
                              cliente.menuUsuario();
                       }
                  } 
                  
-                 if (encontrou==false){
-                     cliente.menuUsuario();
-                 }
      }
      
      public void excluirUsuario(String MatriculaExcluir){
