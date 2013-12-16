@@ -31,7 +31,7 @@ do{
            menuUsuario();
             break;
         case 3:
-            
+             menuAlocacao();
             break;
         default:
             break;
@@ -41,6 +41,29 @@ do{
 
         
            }
+       
+       public static void menuAlocacao(){
+           int escolha;
+           Alocacao aloc = new Alocacao();
+           
+           do{
+               escolha = Integer.parseInt(JOptionPane.showInputDialog("ALOCACAO:"
+                                                                    + "\n 1- Alocar recurso"
+                                                                    + "\n 2- Desalocar recurso"
+                                                                    + "\n 3- Voltar"));
+               
+               switch(escolha){
+                   case 1:
+                       aloc.alocar();
+                       break;
+                   case 2:
+                       
+                       break;
+                   default:
+                       break;
+               }
+           }while(escolha!= 3);
+       }
 
        public static void menuUsuario(){
            int escolha;

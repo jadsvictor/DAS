@@ -16,15 +16,20 @@ public class Alocacao {
     String recurso;
     String usuario;
     String alocarData;
-
-public void alocar (){
-    
     Alocacao alocacao= null;
     String numeroPatrimonioAlocar= null;
     String matriculaUsuarioAlocar= null;
     boolean produtoJaAlocado = false;
     boolean achouRecurso = false;
     boolean achouUsuario = false ;
+
+    Alocacao() {
+       
+    }
+
+public void alocar (){
+    
+    
     
     //pesquisando recurso 
     RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
@@ -113,9 +118,9 @@ public void alocar (){
     @Override
     public String toString() {
         return "Alocacao:" + 
-                "\nRecurso=" + recurso + 
-                "\nUsuario=" + usuario + 
-                "\nAlocarData=" + alocarData ;
+                "\nRecurso: " + numeroPatrimonioAlocar + 
+                "\nAlocado para solicitante: " + matriculaUsuarioAlocar + 
+                "\nDia:" + alocarData ;
     }
 
     
