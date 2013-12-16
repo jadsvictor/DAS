@@ -30,7 +30,7 @@ public class UsuarioProfessor extends UsuarioProdutoConcreto{
     }
        
      public String toString() {
-            return "Tipo de Usuario:Professor" + 
+            return "\nTipo de Usuario:Professor" + 
                 "\n Nome do Professor = " + nome + 
                 "\n Matricula do Professor = " + matricula +
                 "\n Area de atuacao = " + areaAtuacao +    

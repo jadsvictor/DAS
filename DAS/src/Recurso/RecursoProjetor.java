@@ -20,7 +20,7 @@ public class RecursoProjetor extends RecursoProdutoConcreto {
     }
         
         public String toString() {
-            return "Tipo de Recurso: Projetor" + 
+            return "\nTipo de Recurso: Projetor" + 
                 "\n nome do Projetor: "+nomeRecurso+
                 "\n descricao do Projetor: "+descricaoRecurso+
                 "\n numero do Patrimonio: "+numeroPatrimonio+

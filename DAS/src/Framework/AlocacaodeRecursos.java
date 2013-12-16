@@ -66,10 +66,15 @@ public class AlocacaodeRecursos {
             }
         }
         if (produtoJaAlocado==false){
-            JOptionPane.showMessageDialog(null, "aloco");
+            JOptionPane.showMessageDialog(null,alocacao.toString());
           alocacoes.add(alocacao);
         }     
       }    }
+     
+     public static void removerAlocacao(){
+     
+     
+     }
 
     public AlocacaodeRecursos(String recurso, String usuario, String alocarData) {
         this.recurso = recurso;
@@ -111,10 +116,10 @@ public class AlocacaodeRecursos {
 
     @Override
     public String toString() {
-        return "AlocacaodeRecursos:" + 
-                "recurso: " + recurso + 
-                "Solicitante: " + usuario + 
-                "Dia: " + alocarData;
+        return "\nAlocacaodeRecursos:" + 
+                "\nrecurso: " + recurso + 
+                "\nSolicitante: " + usuario + 
+                "\nDia: " + alocarData;
     }
 
     

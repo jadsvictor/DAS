@@ -47,7 +47,7 @@ public abstract class RecursoProdutoAbstrato {
     }
 
    public String Imprimir() {
-            return "Recurso:" + 
+            return "\nRecurso:" + 
                 "\n nome do Recurso = " + nomeRecurso + 
                 "\n descricao do Recurso = " + descricaoRecurso + 
                 "\n numero do Patrimonio = " + numeroPatrimonio ;

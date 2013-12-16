@@ -37,7 +37,7 @@ public class UsuarioProdutoAbstrato {
     }
         
     public String Imprimir() {
-            return "Usuario:" + 
+            return "\nUsuario:" + 
                 "\n Tipo do Usuario = " + tipoUsuario + 
                 "\n Nome do Usuario = " + nome + 
                 "\n Matricula do Usuario = " + matricula ;
