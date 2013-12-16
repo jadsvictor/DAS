@@ -69,7 +69,10 @@ public abstract class RecursoFabricaAbstrata {
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
                         JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
                         achou=true; 
+                        
+                        
                         cliente.menuRecurso();
+                        break;
                        }
                       
                      }

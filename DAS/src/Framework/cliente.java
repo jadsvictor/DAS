@@ -145,7 +145,7 @@ do{
                  //exibir recurso cadastrado
                  //fabricaconcreta.getRecursosCadastrados();
                 
-                JOptionPane.showMessageDialog(null,fCR.fabricaconcreta.getRecursosCadastrados().toString());
+                //JOptionPane.showMessageDialog(null,fCR.fabricaconcreta.getRecursosCadastrados().toString());
                 //JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().toString());
         
             }while(tipoRecurso != 3);
@@ -176,7 +176,7 @@ do{
                fCS.criarProdutoFachada(tipoUsuario);
                
                //exibir solicitante cadastrado
-               JOptionPane.showMessageDialog(null, fCS.fabricaconcretaU.getUsuariosCadastrados().toString());
+               //JOptionPane.showMessageDialog(null, fCS.fabricaconcretaU.getUsuariosCadastrados().toString());
                
            }while(tipoUsuario != 3);
            
