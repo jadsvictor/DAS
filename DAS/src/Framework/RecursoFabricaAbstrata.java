@@ -29,23 +29,17 @@ public abstract class RecursoFabricaAbstrata {
       public void alteraRecurso (String NumeroPatrimonioAlterar){  
                
                int tipoRecursoAlterar=0;
-               boolean encontrou=false;
-               int i;
                RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();             
                fabricaconcreta.getRecursosCadastrados();
-                 for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
+                 for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
                       if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio().equals(NumeroPatrimonioAlterar)){
                             tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
-                             fabricaconcreta.getRecursosCadastrados().remove(i);
-                             fabricaconcreta.criarProduto(tipoRecursoAlterar);  
-                             encontrou=true;
-                             cliente.menuRecurso();
+                            fabricaconcreta.getRecursosCadastrados().get(i).setDescricaoRecurso(JOptionPane.showInputDialog("Informe nova descricao"));
+                            fabricaconcreta.getRecursosCadastrados().get(i).setNomeRecurso(JOptionPane.showInputDialog("Informe novo nome"));
+                            fabricaconcreta.getRecursosCadastrados().get(i).setNumeroPatrimonio(JOptionPane.showInputDialog("Informe novo numero do patrimonio"));
+                            cliente.menuRecurso();
                       }
-                 } 
-                 
-                 if (encontrou==false){
-                     cliente.menuRecurso();
-                 }
+                 }                                
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
           /*  boolean achei = false; 
