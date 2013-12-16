@@ -9,10 +9,11 @@ import javax.swing.JOptionPane;
 
 public abstract class RecursoFabricaAbstrata {
     
-     static ArrayList<RecursoProdutoConcreto> RecursosCadastrados = new ArrayList<RecursoProdutoConcreto> ();
+     protected static ArrayList<RecursoProdutoConcreto> RecursosCadastrados = new ArrayList<RecursoProdutoConcreto> ();
 
      public abstract RecursoProdutoAbstrato factoryMethod (int tipoRecurso);
     
+     //metodo fabrica
      public void criarProduto (int tipoRecurso){
        
 	        // Create the factory object
@@ -22,7 +23,7 @@ public abstract class RecursoFabricaAbstrata {
 	        RecursoProdutoConcreto produto = null; 
                 
                produto = (RecursoProdutoConcreto) fabrica.factoryMethod(tipoRecurso);
-                RecursosCadastrados.add(produto);  
+                //RecursosCadastrados.add(produto);  
             
     }
 
@@ -42,30 +43,12 @@ public abstract class RecursoFabricaAbstrata {
                  }                                
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
-          /*  boolean achei = false; 
-            int R = 0;
-            RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
-            
-            Iterator i = RecursosCadastrados.iterator();
-            
-            while(!achei && i.hasNext()){
-                fabricaconcreta = (RecursoFabricaConcreta) i.next();
-                if(fabricaconcreta.getRecursosCadastrados().get(R).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
-                    JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().get(R).toString());
-                    achei = true;
-
-                }
-                
-            }
-            
-            if(!achei){
-                JOptionPane.showMessageDialog(null, "Numero não encontrado!");
-            }*/
-              boolean achou=false;
+             
+             boolean achou=false;
               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
               int i=0;                
                  for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
-                     
+                  
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
                         JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
                         achou=true; 

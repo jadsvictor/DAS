@@ -16,7 +16,7 @@ public class UsuarioFabricaConcreta extends UsuarioFabricaAbstrata{
                usuarioprofessor.setMatricula(JOptionPane.showInputDialog("Matricula do Professor"));
                 usuarioprofessor.setAreaAtuacao(JOptionPane.showInputDialog("Area de atuacao"));
                usuarioprofessor.setMateriaLeciona(JOptionPane.showInputDialog("Materia que Leciona"));
-               
+               usuarioscadastrados.add(usuarioprofessor);
                JOptionPane.showMessageDialog(null, usuarioprofessor.toString());
                return usuarioprofessor; 
            
@@ -26,7 +26,7 @@ public class UsuarioFabricaConcreta extends UsuarioFabricaAbstrata{
                 usuarioaluno.setMatricula(JOptionPane.showInputDialog("Matricula do Aluno"));
                 usuarioaluno.setSemestreEntrada(JOptionPane.showInputDialog("Informe semestre do aluno"));
                 usuarioaluno.setCurso(JOptionPane.showInputDialog("Informe o curso do aluno"));
-                
+                usuarioscadastrados.add(usuarioaluno);
                 JOptionPane.showMessageDialog(null, usuarioaluno.toString());
                 return usuarioaluno;
            

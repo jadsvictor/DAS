@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public abstract class UsuarioFabricaAbstrata {
   
- static ArrayList<UsuarioProdutoConcreto> usuarioscadastrados = new ArrayList<UsuarioProdutoConcreto> ();
+ protected static ArrayList<UsuarioProdutoConcreto> usuarioscadastrados = new ArrayList<UsuarioProdutoConcreto> ();
  
      public abstract UsuarioProdutoAbstrato factoryMethod (int tipoUsuario);
     
@@ -20,7 +20,7 @@ public abstract class UsuarioFabricaAbstrata {
 	        UsuarioProdutoConcreto produto = null; 
                 
                 produto = (UsuarioProdutoConcreto) fabricaconcretaU.factoryMethod(tipoUsuario);
-                usuarioscadastrados.add(produto);  
+                //usuarioscadastrados.add(produto);  
             
     }
 
