@@ -51,19 +51,23 @@ do{
                escolha = Integer.parseInt(JOptionPane.showInputDialog("ALOCACAO:"
                                                                     + "\n 1- Alocar recurso"
                                                                     + "\n 2- Desalocar recurso"
-                                                                    + "\n 3- Voltar"));
+                                                                    +"\n  3- Imprimir relatorio"    
+                                                                    + "\n 4- Voltar"));
                
                switch(escolha){
                    case 1:
                        AlocacaodeRecursos.Alocacao();
                        break;
                    case 2:
-                       
+                       AlocacaodeRecursos.removerAlocacao();
+                       break;
+                   case 3:
+                       //colocar função pra chamar imprimir
                        break;
                    default:
                        break;
                }
-           }while(escolha!= 3);
+           }while(escolha!= 4);
        }
 
        public static void menuUsuario(){
