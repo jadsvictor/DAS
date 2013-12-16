@@ -1,6 +1,5 @@
 package Recurso;
 
-import Framework.RecursoProdutoAbstrato;
 
 public class RecursoProjetor extends RecursoProdutoConcreto {
 	

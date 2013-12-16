@@ -2,7 +2,6 @@ package Recurso;
 
 import Framework.RecursoFabricaAbstrata;
 import Framework.RecursoProdutoAbstrato;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 

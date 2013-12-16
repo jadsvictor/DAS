@@ -1,12 +1,6 @@
 package Framework;
 
 
-import Recurso.RecursoFabricaConcreta;
-import Framework.AlocacaodeRecursos;
-import static Framework.AlocacaodeRecursos.alocacoes;
-import Recurso.RecursoProdutoConcreto;
-import Usuario.UsuarioFabricaConcreta;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 	 
@@ -36,6 +30,7 @@ do{
              menuAlocacao();
             break;
         default:
+            JOptionPane.showMessageDialog(null, "Opcao Invalida");
             break;
            }
 }while(escolha != 4);
@@ -65,6 +60,7 @@ do{
                       AlocacaodeRecursos.listarAlocacao();
                        break;
                    default:
+                       JOptionPane.showMessageDialog(null, "Opcao Invalida");
                        break;
                }
            }while(escolha!= 4);
@@ -94,6 +90,7 @@ do{
                         excluirUsuario();
                         break;
                     default:
+                        JOptionPane.showMessageDialog(null, "Opcao Invalida");
                         break;
               }
            } while(escolha != 5);
@@ -125,6 +122,7 @@ do{
                         excluirRecurso();
                         break;
                     default:
+                        JOptionPane.showMessageDialog(null, "Opcao Invalida");
                         break;
                     }
             }while(escolha != 5);
@@ -142,7 +140,11 @@ do{
                                                                             +"\n3 - Voltar"));
            
        
+                if (tipoRecurso!= 1 && tipoRecurso!=2){
                 
+                    JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                    
+                }
                 fCR.criarProdutoFachada(tipoRecurso);
                 //fabricaconcreta.criarProduto(tipoRecurso);
        
@@ -176,6 +178,12 @@ do{
                                                                            "\n 1 - Professor."+
                                                                            "\n 2 - Aluno."
                                                                           +"\n 3- Voltar"));
+               
+                if (tipoUsuario!= 1 && tipoUsuario!=2){
+                
+                    JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                    
+                }
                
                fCS.criarProdutoFachada(tipoUsuario);
                

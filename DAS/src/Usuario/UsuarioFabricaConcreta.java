@@ -2,7 +2,6 @@ package Usuario;
 
 import Framework.UsuarioFabricaAbstrata;
 import Framework.UsuarioProdutoAbstrato;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class UsuarioFabricaConcreta extends UsuarioFabricaAbstrata{

@@ -3,8 +3,6 @@ package Framework;
 import Recurso.RecursoFabricaConcreta;
 import Recurso.RecursoProdutoConcreto;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public abstract class RecursoFabricaAbstrata {
@@ -29,18 +27,27 @@ public abstract class RecursoFabricaAbstrata {
 
       public void alteraRecurso (String NumeroPatrimonioAlterar){  
                
+             boolean achou=false;
                int tipoRecursoAlterar=0;
                RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();             
                fabricaconcreta.getRecursosCadastrados();
                  for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) {  
                       if (fabricaconcreta.getRecursosCadastrados().get(i).getNumeroPatrimonio().equals(NumeroPatrimonioAlterar)){
+                            achou=true; 
                             tipoRecursoAlterar = fabricaconcreta.getRecursosCadastrados().get(i).getTipoRecurso();
                             fabricaconcreta.getRecursosCadastrados().get(i).setDescricaoRecurso(JOptionPane.showInputDialog("Informe nova descricao"));
                             fabricaconcreta.getRecursosCadastrados().get(i).setNomeRecurso(JOptionPane.showInputDialog("Informe novo nome"));
                             fabricaconcreta.getRecursosCadastrados().get(i).setNumeroPatrimonio(JOptionPane.showInputDialog("Informe novo numero do patrimonio"));
                             cliente.menuRecurso();
                       }
-                 }                                
+                 }
+                 
+                 if (achou==false){
+                               JOptionPane.showMessageDialog(null, "Numero não encontrado!");
+                                cliente.menuRecurso();      
+                            }
+                 
+                 
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
              
@@ -70,12 +77,13 @@ public abstract class RecursoFabricaAbstrata {
       public void excluirRecurso(String NumeroPatrimonioExcluir){
           RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
           
+           boolean achou=false;
           int i =0;
           int excluir;
           for(i=0; i< fabricaconcreta.getRecursosCadastrados().size(); i++){
               if(fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioExcluir)){
                   JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().get(i).toString());
-                  
+                    achou=true;
                       excluir = Integer.parseInt(JOptionPane.showInputDialog("Deseja remover o Recurso?"
                                                                             + "1 - sim"
                                                                             + "2 - nao"));
@@ -93,6 +101,11 @@ public abstract class RecursoFabricaAbstrata {
                   
               }
           }
+          
+          if (achou==false){
+                               JOptionPane.showMessageDialog(null, "Numero não encontrado!");
+                                cliente.menuRecurso();      
+                            }
           
       }
       

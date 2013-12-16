@@ -1,12 +1,8 @@
 package Framework;
 
 import Recurso.RecursoFabricaConcreta;
-import Recurso.RecursoProdutoConcreto;
-import Usuario.UsuarioProdutoConcreto;
 import Usuario.UsuarioFabricaConcreta;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 public class AlocacaodeRecursos {

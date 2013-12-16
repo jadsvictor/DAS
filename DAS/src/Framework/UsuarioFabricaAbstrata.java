@@ -30,9 +30,10 @@ public abstract class UsuarioFabricaAbstrata {
                int i;
                  for (i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
                       if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
-                   JOptionPane.showMessageDialog(null,fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
+                  
+                          JOptionPane.showMessageDialog(null,fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
                 achou=true; 
-                      cliente.menuUsuario();
+                      
                       } 
                  }
                  
@@ -43,30 +44,34 @@ public abstract class UsuarioFabricaAbstrata {
      }
        
      public void alteraUsuario (String MatriculaAlterar){
-               
+                boolean achou=false;
                int tipoUsuarioAlterar=0;
                UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
                fabricaconcretaU.getUsuariosCadastrados();
                     for (int i = 0; i < fabricaconcretaU.getUsuariosCadastrados().size(); i++) {  
                       if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaAlterar)){
-                             tipoUsuarioAlterar = fabricaconcretaU.getUsuariosCadastrados().get(i).getTipoUsuario();
+                          achou=true;   
+                          tipoUsuarioAlterar = fabricaconcretaU.getUsuariosCadastrados().get(i).getTipoUsuario();
                              fabricaconcretaU.getUsuariosCadastrados().get(i).setMatricula(JOptionPane.showInputDialog("Informe novo numero de matricula"));
                              fabricaconcretaU.getUsuariosCadastrados().get(i).setNome(JOptionPane.showInputDialog("Informe novo nome"));
                              cliente.menuUsuario();
                       }
                  } 
-                 
+               if (achou==false){
+                     JOptionPane.showMessageDialog(null, "Matricula não encontrada!");
+                     cliente.menuUsuario();
+                 }        
      }
      
      public void excluirUsuario(String MatriculaExcluir){
           UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
-          
+           boolean achou=false;
           int i =0;
           int excluir;
           for(i=0; i< fabricaconcretaU.getUsuariosCadastrados().size(); i++){
               if(fabricaconcretaU.getUsuariosCadastrados().get(i).matricula.equals(MatriculaExcluir)){
                   JOptionPane.showMessageDialog(null, fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
-                  
+                  achou=true;
                       excluir = Integer.parseInt(JOptionPane.showInputDialog("Deseja remover o usuário?"
                                                                             + "1 - sim"
                                                                             + "2 - nao"));
@@ -83,6 +88,11 @@ public abstract class UsuarioFabricaAbstrata {
                     }  
               }
           }
+          
+          if (achou==false){
+                     JOptionPane.showMessageDialog(null, "Matricula não encontrada!");
+                     cliente.menuUsuario();
+                 }      
      }
       
      public ArrayList<UsuarioProdutoConcreto> getUsuariosCadastrados() {
