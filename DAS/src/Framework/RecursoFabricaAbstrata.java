@@ -3,6 +3,7 @@ package Framework;
 import Recurso.RecursoFabricaConcreta;
 import Recurso.RecursoProdutoConcreto;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -47,21 +48,43 @@ public abstract class RecursoFabricaAbstrata {
                  }
      }      
       public void buscarRecurso(String NumeroPatrimonioBuscar){
-              
+          /*  boolean achei = false; 
+            int R = 0;
+            RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
+            
+            Iterator i = RecursosCadastrados.iterator();
+            
+            while(!achei && i.hasNext()){
+                fabricaconcreta = (RecursoFabricaConcreta) i.next();
+                if(fabricaconcreta.getRecursosCadastrados().get(R).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
+                    JOptionPane.showMessageDialog(null, fabricaconcreta.getRecursosCadastrados().get(R).toString());
+                    achei = true;
+
+                }
+                
+            }
+            
+            if(!achei){
+                JOptionPane.showMessageDialog(null, "Numero não encontrado!");
+            }*/
               boolean achou=false;
               RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();
               int i=0;                
                  for (i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
                       if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(NumeroPatrimonioBuscar)){
-                      JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
-                      achou=true; 
-                      cliente.menuRecurso();
+                        JOptionPane.showMessageDialog(null,fabricaconcreta.getRecursosCadastrados().get(i).toString());  
+                        achou=true; 
+                        cliente.menuRecurso();
                        }
-                 }
-                if (achou==false){
-               cliente.menuRecurso();
-                 }
-     }
+                      
+                     }
+                 if (achou==false){
+                               JOptionPane.showMessageDialog(null, "Numero não encontrado!");
+                                cliente.menuRecurso();      
+                            }
+          
+          
+   }
     
       public void excluirRecurso(String NumeroPatrimonioExcluir){
           RecursoFabricaConcreta fabricaconcreta = new RecursoFabricaConcreta();

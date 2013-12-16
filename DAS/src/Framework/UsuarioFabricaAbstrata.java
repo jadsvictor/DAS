@@ -32,12 +32,13 @@ public abstract class UsuarioFabricaAbstrata {
                       if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaBuscar)){
                    JOptionPane.showMessageDialog(null,fabricaconcretaU.getUsuariosCadastrados().get(i).toString());
                 achou=true; 
-                      cliente.menuRecurso();
+                      cliente.menuUsuario();
                       } 
                  }
                  
                  if (achou==false){
-               cliente.menuRecurso();
+                     JOptionPane.showMessageDialog(null, "Matricula não encontrada!");
+                     cliente.menuUsuario();
                  }      
      }
        
@@ -54,12 +55,12 @@ public abstract class UsuarioFabricaAbstrata {
                              fabricaconcretaU.getUsuariosCadastrados().remove(i);
                               fabricaconcretaU.criarUsuario(tipoUsuarioAlterar);
                               encontrou=true;
-                             cliente.menuRecurso();
+                             cliente.menuUsuario();
                       }
                  } 
                  
                  if (encontrou==false){
-                     cliente.menuRecurso();
+                     cliente.menuUsuario();
                  }
      }
      
