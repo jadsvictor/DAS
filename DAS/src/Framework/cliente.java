@@ -62,7 +62,7 @@ do{
                        AlocacaodeRecursos.removerAlocacao();
                        break;
                    case 3:
-                       //colocar função pra chamar imprimir
+                      AlocacaodeRecursos.listarAlocacao();
                        break;
                    default:
                        break;
