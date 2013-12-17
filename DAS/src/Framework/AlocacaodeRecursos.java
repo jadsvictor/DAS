@@ -31,15 +31,10 @@ public class AlocacaodeRecursos {
              if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(alocacao.recurso)){
                  achouRecurso = true;
                  achouRecurso_msgErro = true;
-                 break;
+                 
              }
-        }
+        }   
         
-        if (achouRecurso_msgErro==false){
-        
-            JOptionPane.showMessageDialog(null, "Numero de patrimonio nao encontrado");
-            cliente.menuAlocacao();
-        }
         
     //pesquisando usuario
     UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
@@ -48,15 +43,10 @@ public class AlocacaodeRecursos {
              if (fabricaconcretaU.getUsuariosCadastrados().get(j).getMatricula().equals(alocacao.usuario)){
                  achouUsuario_msgErro = true;
                  achouUsuario = true;
-                 break;
+                 
              } 
         }
         
-        if (achouUsuario_msgErro==false){
-        
-            JOptionPane.showMessageDialog(null, "Numero de matricula nao encontrado");
-            cliente.menuAlocacao();
-        }
         
     //definindoDatas
         alocacao.alocarData = JOptionPane.showInputDialog("informar data");
@@ -91,14 +81,11 @@ public class AlocacaodeRecursos {
         for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
              if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(alocacao.recurso)){
                  achouRecurso = true;
-                 break;
+                 
              }
         }
         
-         if (achouRecurso==false){
-            JOptionPane.showMessageDialog(null, "Numero de Patrimonio Nao encontrado");
-            cliente.menuAlocacao();
-        }
+         
     
     //definindoDatas
         alocacao.alocarData = JOptionPane.showInputDialog("informar data");

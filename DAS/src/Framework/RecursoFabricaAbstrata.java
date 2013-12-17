@@ -77,7 +77,7 @@ public abstract class RecursoFabricaAbstrata {
                         
                         
                         cliente.menuRecurso();
-                        break;
+                        
                        }
                       
                      }
