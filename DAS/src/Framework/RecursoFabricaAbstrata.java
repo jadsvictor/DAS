@@ -38,6 +38,21 @@ public abstract class RecursoFabricaAbstrata {
                             fabricaconcreta.getRecursosCadastrados().get(i).setDescricaoRecurso(JOptionPane.showInputDialog("Informe nova descricao"));
                             fabricaconcreta.getRecursosCadastrados().get(i).setNomeRecurso(JOptionPane.showInputDialog("Informe novo nome"));
                             fabricaconcreta.getRecursosCadastrados().get(i).setNumeroPatrimonio(JOptionPane.showInputDialog("Informe novo numero do patrimonio"));
+                            
+                            switch (tipoRecursoAlterar){
+                                
+                                 case 1:
+                                    fabricaconcreta.getRecursosCadastrados().get(i).setMarca(JOptionPane.showInputDialog("Informe nova marca"));
+                                    break;
+                                    
+                                case 2:
+                                     fabricaconcreta.getRecursosCadastrados().get(i).setNumeroSala(JOptionPane.showInputDialog("Informe novo numero da sala"));
+                              fabricaconcreta.getRecursosCadastrados().get(i).setAndarSala(JOptionPane.showInputDialog("Informe novo andar da sala"));
+                               fabricaconcreta.getRecursosCadastrados().get(i).setNomePredio(JOptionPane.showInputDialog("Informe novo nome do prédio"));
+                                    break;
+                                
+                            }
+                            
                             cliente.menuRecurso();
                       }
                  }

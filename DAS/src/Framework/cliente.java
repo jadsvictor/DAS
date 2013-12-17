@@ -30,7 +30,9 @@ do{
              menuAlocacao();
             break;
         default:
+            if(escolha != 4){
             JOptionPane.showMessageDialog(null, "Opcao Invalida");
+            }
             break;
            }
 }while(escolha != 4);
@@ -60,7 +62,9 @@ do{
                       AlocacaodeRecursos.listarAlocacao();
                        break;
                    default:
-                       JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                       if(escolha != 4){
+                        JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                        }
                        break;
                }
            }while(escolha!= 4);
@@ -90,7 +94,9 @@ do{
                         excluirUsuario();
                         break;
                     default:
+                        if(escolha != 5){
                         JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                        }
                         break;
               }
            } while(escolha != 5);
@@ -122,7 +128,9 @@ do{
                         excluirRecurso();
                         break;
                     default:
+                        if(escolha != 5){
                         JOptionPane.showMessageDialog(null, "Opcao Invalida");
+                        }
                         break;
                     }
             }while(escolha != 5);
@@ -140,7 +148,7 @@ do{
                                                                             +"\n3 - Voltar"));
            
        
-                if (tipoRecurso!= 1 && tipoRecurso!=2){
+                if (tipoRecurso!= 1 && tipoRecurso!=2 && tipoRecurso!=3){
                 
                     JOptionPane.showMessageDialog(null, "Opcao Invalida");
                     
@@ -179,7 +187,7 @@ do{
                                                                            "\n 2 - Aluno."
                                                                           +"\n 3- Voltar"));
                
-                if (tipoUsuario!= 1 && tipoUsuario!=2){
+                if (tipoUsuario!= 1 && tipoUsuario!=2 && tipoUsuario!=3){
                 
                     JOptionPane.showMessageDialog(null, "Opcao Invalida");
                     

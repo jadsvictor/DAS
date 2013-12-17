@@ -52,9 +52,20 @@ public abstract class UsuarioFabricaAbstrata {
                       if (fabricaconcretaU.getUsuariosCadastrados().get(i).getMatricula().equals(MatriculaAlterar)){
                           achou=true;   
                           tipoUsuarioAlterar = fabricaconcretaU.getUsuariosCadastrados().get(i).getTipoUsuario();
-                             fabricaconcretaU.getUsuariosCadastrados().get(i).setMatricula(JOptionPane.showInputDialog("Informe novo numero de matricula"));
+                           fabricaconcretaU.getUsuariosCadastrados().get(i).setMatricula(JOptionPane.showInputDialog("Informe novo numero de matricula"));
                              fabricaconcretaU.getUsuariosCadastrados().get(i).setNome(JOptionPane.showInputDialog("Informe novo nome"));
-                             cliente.menuUsuario();
+                          switch (tipoUsuarioAlterar){
+                              case 1:
+                                   fabricaconcretaU.getUsuariosCadastrados().get(i).setMateriaLeciona(JOptionPane.showInputDialog("Informe as novas materias lecionadas"));
+                                  fabricaconcretaU.getUsuariosCadastrados().get(i).setAreaAtuacao(JOptionPane.showInputDialog("Informe a nova area de atuacao"));
+                              break;
+                              case 2:
+                                 fabricaconcretaU.getUsuariosCadastrados().get(i).setSemestreEntrada(JOptionPane.showInputDialog("Informe o novo semestre de entrada"));
+                                 fabricaconcretaU.getUsuariosCadastrados().get(i).setCurso(JOptionPane.showInputDialog("Informe o novo curso"));
+                               break;
+                          }
+                            
+                          cliente.menuUsuario();
                       }
                  } 
                if (achou==false){

@@ -4,10 +4,10 @@ package Recurso;
 public class RecursoSala extends RecursoProdutoConcreto{
         
         private String numeroSala;
-	private int andarSala;
+	private String andarSala;
 	private String nomePredio;
 
-    public RecursoSala(int tipoRecurso, String nomeRecurso, String descricaoRecurso, String numeroPatrimonio,String numeroSala, int andarSala, String nomePredio) {
+    public RecursoSala(int tipoRecurso, String nomeRecurso, String descricaoRecurso, String numeroPatrimonio,String numeroSala, String andarSala, String nomePredio) {
         super(tipoRecurso, nomeRecurso, descricaoRecurso, numeroPatrimonio);
         this.numeroSala = numeroSala;
         this.andarSala = andarSala;
@@ -22,11 +22,11 @@ public class RecursoSala extends RecursoProdutoConcreto{
         this.numeroSala = numeroSala;
     }
 
-    public int getAndarSala() {
+    public String getAndarSala() {
         return andarSala;
     }
 
-    public void setAndarSala(int andarSala) {
+    public void setAndarSala(String andarSala) {
         this.andarSala = andarSala;
     }
 

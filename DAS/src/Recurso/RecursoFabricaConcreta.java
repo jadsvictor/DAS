@@ -2,6 +2,7 @@ package Recurso;
 
 import Framework.RecursoFabricaAbstrata;
 import Framework.RecursoProdutoAbstrato;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -23,12 +24,12 @@ public class RecursoFabricaConcreta extends RecursoFabricaAbstrata {
               
            case 2:  
                //cria produto
-                RecursoSala recursosala = new RecursoSala(tipoRecurso, null, null, null,null, 0, null);
+                RecursoSala recursosala = new RecursoSala(tipoRecurso, null, null, null,null, null, null);
                 
                 recursosala.setDescricaoRecurso(JOptionPane.showInputDialog("Descrição da Sala"));
                 recursosala.setNomeRecurso(JOptionPane.showInputDialog("Informe o Nome"));
                 recursosala.setNumeroPatrimonio(JOptionPane.showInputDialog("Informe o Numero do patrimonio"));
-                recursosala.setAndarSala(Integer.parseInt(JOptionPane.showInputDialog("Informe o andar da sala")));
+                recursosala.setAndarSala(JOptionPane.showInputDialog("Informe o andar da sala"));
                 recursosala.setNomePredio(JOptionPane.showInputDialog("Informe o nome do predio"));
                 recursosala.setNumeroSala(JOptionPane.showInputDialog("Informe o Numero da sala"));
                 RecursosCadastrados.add(recursosala);
