@@ -31,11 +31,10 @@ public class AlocacaodeRecursos {
              if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(alocacao.recurso)){
                  achouRecurso = true;
                  achouRecurso_msgErro = true;
-                 
+                 break;
              }
         }   
-        
-        
+      
     //pesquisando usuario
     UsuarioFabricaConcreta fabricaconcretaU = new UsuarioFabricaConcreta();
     alocacao.usuario = JOptionPane.showInputDialog("Inform a matricula do usuario que deseja alocar");
@@ -43,10 +42,11 @@ public class AlocacaodeRecursos {
              if (fabricaconcretaU.getUsuariosCadastrados().get(j).getMatricula().equals(alocacao.usuario)){
                  achouUsuario_msgErro = true;
                  achouUsuario = true;
-                 
+                 break;
              } 
         }
         
+      
         
     //definindoDatas
         alocacao.alocarData = JOptionPane.showInputDialog("informar data");
@@ -81,11 +81,10 @@ public class AlocacaodeRecursos {
         for (int i = 0; i < fabricaconcreta.getRecursosCadastrados().size(); i++) { 
              if (fabricaconcreta.getRecursosCadastrados().get(i).numeroPatrimonio.equals(alocacao.recurso)){
                  achouRecurso = true;
-                 
+                 break;
              }
         }
-        
-         
+      
     
     //definindoDatas
         alocacao.alocarData = JOptionPane.showInputDialog("informar data");
